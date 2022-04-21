@@ -17,7 +17,7 @@ body {
   height: 365px;
   margin: 15% auto;
   -webkit-animation: shake 7s infinite;
-          animation: shake 7s infinite;
+  animation: shake 7s infinite;
 }
 
 .hulk {
@@ -69,7 +69,7 @@ body {
   border-top-left-radius: 0.5em;
   border-top-right-radius: 0.5em;
   -webkit-animation: mouthOpen 7s infinite;
-          animation: mouthOpen 7s infinite;
+  animation: mouthOpen 7s infinite;
 }
 .hulk .mouth::before {
   content: "";
@@ -92,7 +92,7 @@ body {
   position: absolute;
   clip: rect(-1em, 11.2em, 12.55em, 7.625em);
   -webkit-animation: hulkRightarm 7s infinite;
-          animation: hulkRightarm 7s infinite;
+  animation: hulkRightarm 7s infinite;
 }
 .hulk .right-arm::after {
   content: "";
@@ -114,7 +114,7 @@ body {
   position: absolute;
   clip: rect(-0.188em, 6.1em, 13.875em, 2.3em);
   -webkit-animation: hulkLeftarm 7s infinite;
-          animation: hulkLeftarm 7s infinite;
+  animation: hulkLeftarm 7s infinite;
 }
 .hulk .left-arm::after {
   content: "";
@@ -137,7 +137,7 @@ body {
   box-shadow: 11.1em 0 0 #b5b500;
   z-index: 10;
   -webkit-animation: hulkHands 7s infinite;
-          animation: hulkHands 7s infinite;
+  animation: hulkHands 7s infinite;
 }
 .hulk .body {
   width: 12.5em;
@@ -178,7 +178,7 @@ body {
   margin-top: 12.3em;
   background-image: linear-gradient(to bottom, #2e0e62, #2e0e62 50%, #575700 50%, #575700 100%);
   -webkit-animation: hulkPants2 7s infinite;
-          animation: hulkPants2 7s infinite;
+  animation: hulkPants2 7s infinite;
 }
 .hulk .right-leg::after {
   content: "";
@@ -205,7 +205,7 @@ body {
   margin-top: 12.3em;
   background-image: linear-gradient(to bottom, #581bbb, #581bbb 50%, #bdbd00 50%, #bdbd00 100%);
   -webkit-animation: hulkPants 7s infinite;
-          animation: hulkPants 7s infinite;
+  animation: hulkPants 7s infinite;
 }
 .hulk .left-leg::after {
   content: "";
@@ -232,6 +232,8 @@ body {
   z-index: 1000;
   margin-bottom: 220px;
   bottom: 0;
+  position: absolute;
+  animation: thor_move 5s infinite;
 }
 .thor .helmet {
   width: 0;
@@ -483,6 +485,19 @@ body {
   box-shadow: 24px 0 0 #b75600;
 }
 
+
+.hulk .right-arms {
+    width: 14.3em;
+    height: 3.75em;
+    margin-top: 1em;
+    margin-left: 6em;
+    /* border-radius: 50%; */
+    background: #b5b500;
+    position: absolute;
+    clip: rect(1em, 14.2em, 13.55em, 7.625em);
+    animation: hulKhandTurn 7s infinite;
+}
+
 /*Hand Animation*/
 @-webkit-keyframes shake {
   78%, 80%,82%,84%,86%,88%,90%,92% {
@@ -586,7 +601,7 @@ body {
     transform: translate(0em, 0em);
   }
 }
-@-webkit-keyframes hulkRightarm {
+/*@-webkit-keyframes hulkRightarm {
   77% {
     margin-top: 1em;
     margin-left: 2em;
@@ -607,76 +622,80 @@ body {
     margin-left: 2em;
     clip: rect(-1em, 11.2em, 12.55em, 7.625em);
   }
-}
-@keyframes hulkRightarm {
-  77% {
-    margin-top: 1em;
-    margin-left: 2em;
-    clip: rect(-1em, 11.2em, 12.55em, 7.625em);
+  }*/
+  @keyframes hulkRightarm {
+    77% {
+      margin-top: 1em;
+      margin-left: 2em;
+      clip: rect(-1em, 11.2em, 12.55em, 7.625em);
+    }
+    80% {
+      margin-top: -8.125em;
+      margin-left: 2.5em;
+      clip: rect(0.563em, 13.363em, 13.75em, 6.625em);
+    }
+    93% {
+      margin-top: -8.125em;
+      margin-left: 2.5em;
+      clip: rect(0.563em, 13.363em, 13.75em, 6.625em);
+    }
+    95% {
+      margin-top: 1em;
+      margin-left: 2em;
+      clip: rect(-1em, 11.2em, 12.55em, 7.625em);
+    }
+ 
   }
-  80% {
-    margin-top: -8.125em;
-    margin-left: 2.5em;
-    clip: rect(0.563em, 13.363em, 13.75em, 6.625em);
+  @-webkit-keyframes hulkLeftarm {
+    77% {
+      margin-top: 1em;
+      margin-left: -4.3em;
+      clip: rect(-0.188em, 6.1em, 13.875em, 2.3em);
+    }
+    80% {
+      margin-top: -8.125em;
+      margin-left: -4.375em;
+      clip: rect(-0.188em, 6.563em, 13.875em, 0em);
+    }
+    93% {
+      margin-top: -8.125em;
+      margin-left: -4.375em;
+      clip: rect(-0.188em, 6.563em, 13.875em, 0em);
+    }
+    95% {
+      margin-top: 1em;
+      margin-left: -4.3em;
+      clip: rect(-0.188em, 6.1em, 13.875em, 2.3em);
+    }
   }
-  93% {
-    margin-top: -8.125em;
-    margin-left: 2.5em;
-    clip: rect(0.563em, 13.363em, 13.75em, 6.625em);
+  @keyframes hulkLeftarm {
+    77% {
+      margin-top: 1em;
+      margin-left: -4.3em;
+      clip: rect(-0.188em, 6.1em, 13.875em, 2.3em);
+    }
+    80% {
+      margin-top: -8.125em;
+      margin-left: -4.375em;
+      clip: rect(-0.188em, 6.563em, 13.875em, 0em);
+    }
+    93% {
+      margin-top: -8.125em;
+      margin-left: -4.375em;
+      clip: rect(-0.188em, 6.563em, 13.875em, 0em);
+    }
+    95% {
+      margin-top: 1em;
+      margin-left: -4.3em;
+      clip: rect(-0.188em, 6.1em, 13.875em, 2.3em);
+    }
+    98%{
+      
+    }
   }
-  95% {
-    margin-top: 1em;
-    margin-left: 2em;
-    clip: rect(-1em, 11.2em, 12.55em, 7.625em);
-  }
-}
-@-webkit-keyframes hulkLeftarm {
-  77% {
-    margin-top: 1em;
-    margin-left: -4.3em;
-    clip: rect(-0.188em, 6.1em, 13.875em, 2.3em);
-  }
-  80% {
-    margin-top: -8.125em;
-    margin-left: -4.375em;
-    clip: rect(-0.188em, 6.563em, 13.875em, 0em);
-  }
-  93% {
-    margin-top: -8.125em;
-    margin-left: -4.375em;
-    clip: rect(-0.188em, 6.563em, 13.875em, 0em);
-  }
-  95% {
-    margin-top: 1em;
-    margin-left: -4.3em;
-    clip: rect(-0.188em, 6.1em, 13.875em, 2.3em);
-  }
-}
-@keyframes hulkLeftarm {
-  77% {
-    margin-top: 1em;
-    margin-left: -4.3em;
-    clip: rect(-0.188em, 6.1em, 13.875em, 2.3em);
-  }
-  80% {
-    margin-top: -8.125em;
-    margin-left: -4.375em;
-    clip: rect(-0.188em, 6.563em, 13.875em, 0em);
-  }
-  93% {
-    margin-top: -8.125em;
-    margin-left: -4.375em;
-    clip: rect(-0.188em, 6.563em, 13.875em, 0em);
-  }
-  95% {
-    margin-top: 1em;
-    margin-left: -4.3em;
-    clip: rect(-0.188em, 6.1em, 13.875em, 2.3em);
-  }
-}
 
 
-.circle {
+  .circle {
     border: 3px solid #ccc;
     width: 450px;
     height: 350px;
@@ -684,10 +703,7 @@ body {
     border-radius: 100%;
     overflow: hidden;
     position: absolute;
-    left: 36px;
-    bottom: 200px;
-    top: 0;
-}
+  }
 /*.circle:hover {
   background: #070338;
 }
@@ -700,14 +716,33 @@ body {
 
 @-webkit-keyframes grow {
  0% {
--webkit-transform: scale( 0 );-moz-transform: scale( 0 );-o-transform: scale( 0 );-ms-transform: scale( 0 );transform: scale( 0 );
-  }
-  
-  50% {
+  -webkit-transform: scale( 0 );-moz-transform: scale( 0 );-o-transform: scale( 0 );-ms-transform: scale( 0 );transform: scale( 0 );
+}
+
+50% {
   -webkit-transform: scale( 1 );-moz-transform: scale( 1 );-o-transform: scale( 1 );-ms-transform: scale( 1 );transform: scale( 1 );
+}
+
+100% {
+  opacity: 0;
+}
+}
+
+@keyframes thor_move{
+  from{
+    left:0px;
   }
-  
-  100% {
-  -webkit-transform: scale( 0.8 );-moz-transform: scale( 0.8 );-o-transform: scale( 0.8 );-ms-transform: scale( 0.8 );transform: scale( 0 );
+  90%{
+    left: 100%;
+ }
+ 100%{
+  opacity: 0;
+ }
+}
+
+@keyframes hulKhandTurn{
+  to{
+
   }
+
 }
