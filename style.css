@@ -17,7 +17,7 @@ body {
   height: 365px;
   margin: 15% auto;
   -webkit-animation: shake 7s infinite;
-  animation: shake 7s infinite;
+  animation: shake 2s infinite;
 }
 
 .hulk {
@@ -68,8 +68,8 @@ body {
   background-image: linear-gradient(to bottom, #ffffff, #ffffff 25%, #4b0a00 25%, #4b0a00 70%, #ffffff 75%, #ffffff 100%);
   border-top-left-radius: 0.5em;
   border-top-right-radius: 0.5em;
-  -webkit-animation: mouthOpen 7s infinite;
-  animation: mouthOpen 7s infinite;
+  -webkit-animation: mouthOpen 2s infinite;
+  animation: mouthOpen 2s infinite;
 }
 .hulk .mouth::before {
   content: "";
@@ -91,8 +91,8 @@ body {
   background: #b5b500;
   position: absolute;
   clip: rect(-1em, 11.2em, 12.55em, 7.625em);
-  -webkit-animation: hulkRightarm 7s infinite;
-  animation: hulkRightarm 7s infinite;
+  -webkit-animation: hulkRightarm 72s infinite;
+  animation: hulkRightarm 2s infinite;
 }
 .hulk .right-arm::after {
   content: "";
@@ -113,8 +113,8 @@ body {
   background: #949400;
   position: absolute;
   clip: rect(-0.188em, 6.1em, 13.875em, 2.3em);
-  -webkit-animation: hulkLeftarm 7s infinite;
-  animation: hulkLeftarm 7s infinite;
+  /*-webkit-animation: hulkLeftarm 7s infinite;*/
+  animation: hulkLeftarm 2s infinite;
 }
 .hulk .left-arm::after {
   content: "";
@@ -136,8 +136,8 @@ body {
   background: #949400;
   box-shadow: 11.1em 0 0 #b5b500;
   z-index: 10;
-  -webkit-animation: hulkHands 7s infinite;
-  animation: hulkHands 7s infinite;
+ /* -webkit-animation: hulkHands 7s infinite;*/
+  animation: hulkHands 2s infinite;
 }
 .hulk .body {
   width: 12.5em;
@@ -233,7 +233,7 @@ body {
   margin-bottom: 220px;
   bottom: 0;
   position: absolute;
-  animation: thor_move 5s infinite;
+  animation: thor_move 2s infinite;
 }
 .thor .helmet {
   width: 0;
@@ -487,19 +487,19 @@ body {
 
 
 .hulk .right-arms {
-    width: 14.3em;
-    height: 3.75em;
-    margin-top: 1em;
-    margin-left: 6em;
-    /* border-radius: 50%; */
-    background: #b5b500;
-    position: absolute;
-    clip: rect(1em, 14.2em, 13.55em, 7.625em);
-    animation: hulKhandTurn 7s infinite;
+  width: 14.3em;
+  height: 3.75em;
+  margin-top: 1em;
+  margin-left: 6em;
+  /* border-radius: 50%; */
+  background: #b5b500;
+  position: absolute;
+  clip: rect(1em, 14.2em, 13.55em, 7.625em);
+  animation: hulKhandTurn 7s infinite;
 }
 
 /*Hand Animation*/
-@-webkit-keyframes shake {
+/*@-webkit-keyframes shake {
   78%, 80%,82%,84%,86%,88%,90%,92% {
     top: 3px;
     left: 2px;
@@ -508,18 +508,18 @@ body {
     top: 0px;
     left: -2px;
   }
-}
+}*/
 @keyframes shake {
-  78%, 80%,82%,84%,86%,88%,90%,92% {
+  0%, 25%,40% {
     top: 3px;
     left: 2px;
   }
-  79%,81%,83%,85%,87%,89%,91% {
+  0%, 25%,40%  {
     top: 0px;
     left: -2px;
   }
 }
-@-webkit-keyframes mouthOpen {
+/*@-webkit-keyframes mouthOpen {
   77% {
     height: 0px;
   }
@@ -534,24 +534,24 @@ body {
     height: 0px;
     opacity: 0;
   }
-}
+}*/
 @keyframes mouthOpen {
-  77% {
+  0% {
     height: 0px;
   }
-  80% {
+  25% {
     height: 22px;
   }
-  93% {
+  40% {
     height: 22px;
     opacity: 1;
   }
-  95% {
+ /* 95% {
     height: 0px;
     opacity: 0;
-  }
+  }*/
 }
-@-webkit-keyframes hulkHands {
+/*@-webkit-keyframes hulkHands {
   6% {
     box-shadow: 11.1em 0 0 #b5b500;
   }
@@ -575,22 +575,22 @@ body {
     margin-left: -2.1em;
     transform: translate(0em, 0em);
   }
-}
+}*/
 @keyframes hulkHands {
-  6% {
+  0% {
     box-shadow: 11.1em 0 0 #b5b500;
   }
-  77% {
+  25% {
     box-shadow: 11.1em 0 0 #b5b500;
     margin-left: -2.1em;
     transform: translate(0, 0);
   }
-  80% {
+  40% {
     margin-left: 0.5em;
     box-shadow: 8.5em 0 0 #b5b500;
     transform: translate(-0.9em, -19.9em);
   }
-  93% {
+/*  93% {
     margin-left: 0.5em;
     box-shadow: 8.5em 0 0 #b5b500;
     transform: translate(-0.9em, -19.9em);
@@ -599,7 +599,7 @@ body {
     box-shadow: 11.1em 0 0 #b5b500;
     margin-left: -2.1em;
     transform: translate(0em, 0em);
-  }
+  }*/
 }
 /*@-webkit-keyframes hulkRightarm {
   77% {
@@ -624,29 +624,32 @@ body {
   }
   }*/
   @keyframes hulkRightarm {
-    77% {
+    0% {
       margin-top: 1em;
       margin-left: 2em;
       clip: rect(-1em, 11.2em, 12.55em, 7.625em);
     }
-    80% {
+    25% {
       margin-top: -8.125em;
       margin-left: 2.5em;
       clip: rect(0.563em, 13.363em, 13.75em, 6.625em);
     }
-    93% {
+
+    40% {
       margin-top: -8.125em;
       margin-left: 2.5em;
       clip: rect(0.563em, 13.363em, 13.75em, 6.625em);
     }
-    95% {
+/*    95% {
       margin-top: 1em;
       margin-left: 2em;
       clip: rect(-1em, 11.2em, 12.55em, 7.625em);
-    }
- 
+    }*/
+
+
+
   }
-  @-webkit-keyframes hulkLeftarm {
+/*  @-webkit-keyframes hulkLeftarm {
     77% {
       margin-top: 1em;
       margin-left: -4.3em;
@@ -667,31 +670,31 @@ body {
       margin-left: -4.3em;
       clip: rect(-0.188em, 6.1em, 13.875em, 2.3em);
     }
-  }
+  }*/
   @keyframes hulkLeftarm {
-    77% {
+    0% {
       margin-top: 1em;
       margin-left: -4.3em;
       clip: rect(-0.188em, 6.1em, 13.875em, 2.3em);
     }
-    80% {
+    25% {
       margin-top: -8.125em;
       margin-left: -4.375em;
       clip: rect(-0.188em, 6.563em, 13.875em, 0em);
     }
-    93% {
+    40% {
       margin-top: -8.125em;
       margin-left: -4.375em;
       clip: rect(-0.188em, 6.563em, 13.875em, 0em);
     }
-    95% {
+/*    95% {
       margin-top: 1em;
       margin-left: -4.3em;
       clip: rect(-0.188em, 6.1em, 13.875em, 2.3em);
     }
     98%{
-      
-    }
+
+    }*/
   }
 
 
@@ -703,41 +706,42 @@ body {
     border-radius: 100%;
     overflow: hidden;
     position: absolute;
+    animation: grow 2s infinite;
   }
 /*.circle:hover {
   background: #070338;
 }
 */
 
-.circle {
+/*.circle {
   -webkit-animation:grow 2s infinite;
 
-}
+  }*/
 
-@-webkit-keyframes grow {
- 0% {
-  -webkit-transform: scale( 0 );-moz-transform: scale( 0 );-o-transform: scale( 0 );-ms-transform: scale( 0 );transform: scale( 0 );
-}
+  @-webkit-keyframes grow {
+   0% {
+    -webkit-transform: scale( 0 );-moz-transform: scale( 0 );-o-transform: scale( 0 );-ms-transform: scale( 0 );transform: scale( 0 );
+  }
 
-50% {
-  -webkit-transform: scale( 1 );-moz-transform: scale( 1 );-o-transform: scale( 1 );-ms-transform: scale( 1 );transform: scale( 1 );
-}
+  50% {
+    -webkit-transform: scale( 6 );-moz-transform: scale( 6 );-o-transform: scale( 6 );-ms-transform: scale( 6 );transform: scale( 6 );
+  }
 
-100% {
-  opacity: 0;
-}
+  100% {
+    opacity: 0;
+  }
 }
 
 @keyframes thor_move{
-  from{
-    left:0px;
+  0%{
+    left:0%;
   }
-  90%{
-    left: 100%;
- }
- 100%{
-  opacity: 0;
- }
+  25%{
+    left: 50%;
+  }
+  40%{
+    left: 1000%;
+  }
 }
 
 @keyframes hulKhandTurn{
